@@ -3,11 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ScreenMark – Present, Annotate &amp; Zoom on Your Mac</title>
+  <title>ScreenMark – Present, Annotate &amp; Zoom</title>
   <meta name="description" content="ScreenMark is a macOS menu bar app for live screen annotation, zoom, whiteboard overlay, freeze frame, and recording. Perfect for teachers, presenters, and developers.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ScreenMark – Present, Annotate &amp; Zoom">
+  <meta property="og:description" content="A macOS menu bar app for live screen annotation, zoom, whiteboard, freeze frame, and recording.">
+  <meta property="og:image" content="assets/app-icon.png">
+  <meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="assets/site.css">
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="apple-touch-icon" href="assets/app-icon.png">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sm-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
 </head>
 <body>
 
@@ -24,6 +39,9 @@
         <a href="#pricing" class="nav-hide-sm">Pricing</a>
         <a href="support/">Support</a>
         <a href="#download" class="appstore-nav">Download Free</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -53,8 +71,8 @@
             <div class="macos-dot yellow"></div>
             <div class="macos-dot green"></div>
           </div>
-          <img src="assets/screenshots/ss1.png"
-               alt="ScreenMark in use – live annotation overlay on Mac"
+          <img src="assets/screenshots/popover.jpg"
+               alt="ScreenMark menu bar control panel open over a macOS desktop"
                loading="eager">
         </div>
       </div>
@@ -63,7 +81,7 @@
     <!-- ── PROOF BAR ── -->
     <div class="proof-bar">
       <div class="proof-item"><span class="pi-icon">🍎</span> Built for macOS</div>
-      <div class="proof-item"><span class="pi-icon">🔒</span> 100 % local — no data leaves your Mac</div>
+      <div class="proof-item"><span class="pi-icon">🔒</span> Local-first — no account, no tracking</div>
       <div class="proof-item"><span class="pi-icon">⚡</span> Lives in your menu bar</div>
       <div class="proof-item"><span class="pi-icon">🆓</span> Free to download</div>
       <div class="proof-item"><span class="pi-icon">🖥️</span> Apple Silicon &amp; Intel</div>
@@ -149,29 +167,37 @@
       </div>
       <div class="gallery-scroll-wrap">
         <div class="gallery-track">
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss1.png')">
-            <img src="assets/screenshots/ss1.png" alt="ScreenMark draw mode overview" loading="lazy">
-            <div class="gallery-caption">Draw mode overview</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/popover.jpg')">
+            <img src="assets/screenshots/popover.jpg" alt="ScreenMark menu bar control panel" loading="lazy">
+            <div class="gallery-caption">Menu bar control panel</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss2.png')">
-            <img src="assets/screenshots/ss2.png" alt="ScreenMark annotations in action" loading="lazy">
-            <div class="gallery-caption">Annotations in action</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/annotate.jpg')">
+            <img src="assets/screenshots/annotate.jpg" alt="Arrows, boxes, and text drawn on screen with the annotation toolbar" loading="lazy">
+            <div class="gallery-caption">Draw &amp; annotate anything</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss3.png')">
-            <img src="assets/screenshots/ss3.png" alt="ScreenMark live zoom mode" loading="lazy">
-            <div class="gallery-caption">Live Zoom mode</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/zoom.jpg')">
+            <img src="assets/screenshots/zoom.jpg" alt="ScreenMark live zoom magnifying part of the screen" loading="lazy">
+            <div class="gallery-caption">Live Zoom</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss4.png')">
-            <img src="assets/screenshots/ss4.png" alt="ScreenMark break mode triple-ring timer" loading="lazy">
-            <div class="gallery-caption">Break mode timer</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/break.jpg')">
+            <img src="assets/screenshots/break.jpg" alt="Full-screen break timer with minutes and seconds rings" loading="lazy">
+            <div class="gallery-caption">Break timer</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss5.png')">
-            <img src="assets/screenshots/ss5.png" alt="ScreenMark settings panes" loading="lazy">
-            <div class="gallery-caption">Settings &amp; preferences</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/blackboard.png')">
+            <img src="assets/screenshots/blackboard.png" alt="Blackboard overlay with annotation toolbar" loading="lazy">
+            <div class="gallery-caption">Whiteboard &amp; blackboard</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/ss6.png')">
-            <img src="assets/screenshots/ss6.png" alt="ScreenMark status popover and menu bar" loading="lazy">
-            <div class="gallery-caption">Menu bar &amp; quick controls</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/snip.jpg')">
+            <img src="assets/screenshots/snip.jpg" alt="Dragging a region selection to snip part of the screen" loading="lazy">
+            <div class="gallery-caption">Freeze &amp; snip</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/record.png')">
+            <img src="assets/screenshots/record.png" alt="Recording and Live Zoom active with the cursor flashlight" loading="lazy">
+            <div class="gallery-caption">Recording &amp; cursor focus</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/popover2.jpg')">
+            <img src="assets/screenshots/popover2.jpg" alt="Zoom style and break controls in the ScreenMark panel" loading="lazy">
+            <div class="gallery-caption">Surfaces &amp; zoom styles</div>
           </div>
         </div>
       </div>
@@ -184,7 +210,7 @@
           <span class="spotlight-tag">Draw &amp; Annotate</span>
           <h2>Every annotation tool you'll ever need</h2>
           <p>Pen, highlighter, arrows, shapes, blur, spotlight, eraser, and in-place text — all accessible in one click. Drag text labels to reposition them. S/M/L/XL stroke sizes.</p>
-          <p>Annotations render at full Retina resolution — crystal-clear on any Mac display including Pro Display XDR.</p>
+          <p>Annotations render at full Retina resolution — crystal-clear on any display including Pro Display XDR.</p>
           <div class="pill-list">
             <span class="pill">Freehand pen</span>
             <span class="pill">Highlighter</span>
@@ -195,7 +221,7 @@
           </div>
         </div>
         <div class="spotlight-visual">
-          <img src="assets/screenshots/ss2.png" alt="ScreenMark draw and annotation tools" data-placeholder="true">
+          <img src="assets/screenshots/annotate.jpg" alt="ScreenMark draw and annotation tools in use">
         </div>
       </div>
 
@@ -214,7 +240,7 @@
           </div>
         </div>
         <div class="spotlight-visual">
-          <img src="assets/screenshots/ss3.png" alt="ScreenMark cursor flashlight and highlight" data-placeholder="true">
+          <img src="assets/screenshots/flashlight.jpg" alt="ScreenMark cursor flashlight focusing attention on screen" loading="lazy">
         </div>
       </div>
 
@@ -232,7 +258,7 @@
           </div>
         </div>
         <div class="spotlight-visual">
-          <img src="assets/screenshots/ss4.png" alt="ScreenMark break mode triple-ring timer" data-placeholder="true">
+          <img src="assets/screenshots/break.jpg" alt="ScreenMark full-screen break timer with countdown rings" loading="lazy">
         </div>
       </div>
 
@@ -250,7 +276,7 @@
           </div>
         </div>
         <div class="spotlight-visual">
-          <img src="assets/screenshots/ss6.png" alt="ScreenMark screen recording and snip" data-placeholder="true">
+          <img src="assets/screenshots/record.png" alt="ScreenMark screen recording with Live Zoom active" loading="lazy">
         </div>
       </div>
     </section>
@@ -355,7 +381,7 @@
         <a href="mailto:apple@mustafacerit.com">apple@mustafacerit.com</a>
         <a href="https://github.com/ceritmustafa/ScreenMark" target="_blank" rel="noopener">GitHub</a>
       </div>
-      <span class="footer-copy">© 2025 ScreenMark</span>
+      <span class="footer-copy">© 2026 ScreenMark</span>
     </div>
   </footer>
 
@@ -366,6 +392,12 @@
   </div>
 
   <script>
+    function toggleTheme() {
+      var cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = cur === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('sm-theme', next); } catch (e) {}
+    }
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').classList.add('open');
