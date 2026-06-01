@@ -5,7 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support – ScreenMark</title>
   <meta name="description" content="Support page for ScreenMark. Permission setup, restore purchases, FAQs, and contact details.">
+  <meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="../assets/site.css">
+  <link rel="icon" type="image/png" href="../assets/icon.png">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sm-theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) { document.documentElement.setAttribute('data-theme', 'dark'); }
+    })();
+  </script>
 </head>
 <body>
 
@@ -19,6 +31,9 @@
         <a href="../">Home</a>
         <a href="./">Support</a>
         <a href="../privacy/">Privacy</a>
+        <button class="theme-toggle" type="button" aria-label="Toggle dark mode" onclick="toggleTheme()">
+          <span class="icon-sun">☀️</span><span class="icon-moon">🌙</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -223,13 +238,19 @@
         <a href="../privacy/">Privacy</a>
         <a href="mailto:apple@mustafacerit.com">apple@mustafacerit.com</a>
       </div>
-      <span class="footer-copy">© 2025 ScreenMark</span>
+      <span class="footer-copy">© 2026 ScreenMark</span>
     </div>
   </footer>
 
   <script>
     function toggleFaq(el) {
       el.closest('.faq-item').classList.toggle('open');
+    }
+    function toggleTheme() {
+      var cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      var next = cur === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('sm-theme', next); } catch (e) {}
     }
   </script>
 
