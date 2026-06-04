@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy – ScreenMark</title>
-  <meta name="description" content="ScreenMark Privacy Policy. ScreenMark collects no personal data — no accounts, analytics, or tracking. Everything stays on your device.">
+  <meta name="description" content="ScreenMark Privacy Policy, covering ScreenMark for macOS and ScreenMark Remote for iOS. No accounts, analytics, or tracking — everything stays on your device.">
   <meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="../assets/site.css">
@@ -68,7 +68,7 @@
           <article class="card">
             <div class="card-icon purple">🔒</div>
             <h3>Sandboxed &amp; local</h3>
-            <p>Settings, snapshots, and recordings stay in the macOS sandbox or wherever you save them.</p>
+            <p>On Mac, settings, snapshots, and recordings stay in the sandbox or wherever you save them. On iPhone, the Remote talks only to your own computer.</p>
           </article>
         </div>
       </div>
@@ -78,33 +78,37 @@
     <section class="section section-alt section-border-top">
       <div class="shell" style="max-width:820px">
 
-        <p style="margin-bottom:18px">This Privacy Policy explains how personal data is handled in connection with the macOS
-        application <strong style="color:var(--ink)">ScreenMark</strong> ("the App"), distributed exclusively through the Apple
-        Mac App Store. The data controller is <strong style="color:var(--ink)">Mustafa Cerit</strong> ("the Developer", "we", "us").
+        <p style="margin-bottom:18px">This Privacy Policy explains how personal data is handled in connection with
+        <strong style="color:var(--ink)">ScreenMark</strong> for macOS and its companion app
+        <strong style="color:var(--ink)">ScreenMark Remote</strong> for iOS (together, "the Apps"), both distributed
+        exclusively through the Apple App Store. The data controller is
+        <strong style="color:var(--ink)">Mustafa Cerit</strong> ("the Developer", "we", "us").
         For any matter relating to this Policy or to the processing of personal data, contact us at
         <a href="mailto:apple@mustafacerit.com" style="color:var(--accent)">apple@mustafacerit.com</a>.</p>
 
-        <p>This Policy applies only to the App and to processing carried out directly by the Developer through the App.
+        <p>This Policy applies only to the Apps and to processing carried out directly by the Developer through the Apps.
         It does <strong style="color:var(--ink)">not</strong> apply to Apple Inc.'s processing of your data as operator of the
-        Mac App Store and StoreKit, which is governed by the
+        App Store and StoreKit, which is governed by the
         <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener" style="color:var(--accent)">Apple Privacy Policy</a>.</p>
 
         <div class="accent-rule"></div>
 
         <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">1. Summary</h2>
-        <p>ScreenMark collects no personal data. There are no user accounts, no analytics, no telemetry, no crash reports,
+        <p>Neither app collects personal data. There are no user accounts, no analytics, no telemetry, no crash reports,
         and no advertising identifiers. The Developer operates no server, database, or cloud infrastructure that receives
-        data from the App. The Apple Privacy "Nutrition Label" for the App is therefore set to <strong style="color:var(--ink)">"Data Not Collected"</strong>.</p>
+        data from the Apps. The Apple Privacy "Nutrition Label" for both apps is therefore set to <strong style="color:var(--ink)">"Data Not Collected"</strong>.</p>
 
         <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">2. Data stored locally on your device</h2>
         <p>Your preferences and settings, the cached Pro entitlement state, and security-scoped bookmarks for any export
-        folders you choose are stored locally on your device, inside the App's macOS sandbox container, using the standard
-        <code>UserDefaults</code> and security-scoped bookmark mechanisms provided by macOS. Snapshots and recordings are
-        written only to the location you select when you export them. This information never leaves your device as a result
-        of the App's normal operation, and the Developer has no technical means to access it.</p>
+        folders you choose are stored locally on your device, inside the App's sandbox container, using the standard
+        <code>UserDefaults</code> and security-scoped bookmark mechanisms provided by the operating system. Snapshots and
+        recordings are written only to the location you select when you export them. On iPhone, ScreenMark Remote also stores
+        a small pairing token in the <strong style="color:var(--ink)">iOS Keychain</strong> so it can reconnect to a computer
+        you have already trusted. This information never leaves your device as a result of the Apps' normal operation, and the
+        Developer has no technical means to access it.</p>
 
-        <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">3. Network connections initiated by the App</h2>
-        <p>The App performs outbound network requests only in these two cases, and to no other destination:</p>
+        <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">3. Network connections initiated by the Apps</h2>
+        <p>ScreenMark for macOS performs outbound network requests only in these two cases, and to no other destination:</p>
         <ul style="margin:10px 0 4px 0; padding-left:20px">
           <li style="margin-bottom:10px"><strong style="color:var(--ink)">App Store &amp; StoreKit.</strong> Purchases, receipt
           validation, restoration, and Pro entitlement checks are performed by Apple through the StoreKit framework.</li>
@@ -112,7 +116,11 @@
           (<code>itunes.apple.com/lookup</code>) using only the App's public bundle identifier, to detect whether a newer
           version is available. No personal data is transmitted in this request.</li>
         </ul>
-        <p>The App contains no third-party SDK for analytics, advertising, attribution, A/B testing, crash reporting, or
+        <p><strong style="color:var(--ink)">ScreenMark Remote for iOS</strong> makes no internet connection for its core
+        function. It communicates only with your own computer over Apple's Multipeer Connectivity framework — a local,
+        peer-to-peer link over Wi-Fi or Bluetooth on your local network. Pairing and all control messages are exchanged over
+        this encrypted on-device link; nothing is sent to the Developer or to any server.</p>
+        <p>Neither app contains any third-party SDK for analytics, advertising, attribution, A/B testing, crash reporting, or
         marketing automation.</p>
 
         <!-- Permissions explainer -->
@@ -131,6 +139,19 @@
             <p>Used for global hotkeys only — so the overlay can react while you work in another app. Not used to log keystrokes.</p>
           </article>
         </div>
+
+        <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 14px">iOS permissions ScreenMark Remote may request</h2>
+        <div class="cards-grid" style="margin:0 0 8px">
+          <article class="card" style="padding:20px 22px">
+            <h3>Local Network</h3>
+            <p>Required to find and connect to ScreenMark running on your own computer over the local network. Used only to reach your computer — never the public internet.</p>
+          </article>
+          <article class="card" style="padding:20px 22px">
+            <h3>Motion &amp; Fitness</h3>
+            <p>Used only when you turn on Air Mouse, so moving your phone can steer the Mac cursor. Motion data stays on the device and is never stored or transmitted.</p>
+          </article>
+        </div>
+        <p style="margin-top:4px">ScreenMark Remote requests no microphone, camera, photo, location, or contacts access.</p>
 
         <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">4. In-app purchases</h2>
         <p>ScreenMark Pro is available as a monthly subscription, a yearly subscription, or a one-time lifetime purchase.
@@ -199,8 +220,10 @@
         Because the App collects no data, it is suitable for use by all age groups.</p>
 
         <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">12. Security</h2>
-        <p>ScreenMark relies on standard macOS protections: App Sandbox, the hardened runtime, security-scoped bookmarks, and
-        HTTPS for every outbound request. We run no server and store no user data, so there is nothing to breach on our side.</p>
+        <p>The Apps rely on standard operating-system protections: the App Sandbox, the hardened runtime, security-scoped
+        bookmarks, the iOS Keychain, and HTTPS for every outbound request. ScreenMark Remote's connection to your computer
+        runs over Apple's encrypted Multipeer Connectivity link and is authorised with a one-time pairing code. We run no
+        server and store no user data, so there is nothing to breach on our side.</p>
 
         <h2 style="font-size:1.5rem;letter-spacing:-0.4px;margin:30px 0 10px">13. Changes to this Policy</h2>
         <p>This Policy may be updated from time to time, in particular to reflect changes in the App or in applicable

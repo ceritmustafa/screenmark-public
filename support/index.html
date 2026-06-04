@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Support – ScreenMark</title>
-  <meta name="description" content="Support page for ScreenMark. Permission setup, restore purchases, FAQs, and contact details.">
+  <meta name="description" content="Support for ScreenMark and the ScreenMark Remote iPhone companion. Permission setup, pairing help, restore purchases, FAQs, and contact details.">
   <meta name="theme-color" content="#0a0b0f" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <link rel="stylesheet" href="../assets/site.css">
@@ -112,6 +112,23 @@
           </article>
         </div>
 
+        <!-- iPhone Remote -->
+        <article class="panel" style="margin-bottom:48px">
+          <h2 style="font-size:1.3rem;letter-spacing:-0.3px">ScreenMark Remote (iPhone)</h2>
+          <div class="accent-rule"></div>
+          <p style="margin-bottom:14px">ScreenMark Remote is a free companion app that turns your iPhone into a presentation remote for ScreenMark on your computer. It needs ScreenMark Pro active on the computer, and both devices on the same local network.</p>
+          <ul class="info-list">
+            <li>
+              <strong>Local Network</strong>
+              <p>Required so the Remote can find and connect to your computer. Allow it in <strong>Settings → ScreenMark Remote → Local Network</strong> on your iPhone.</p>
+            </li>
+            <li>
+              <strong>Motion &amp; Fitness</strong>
+              <p>Used only for the optional Air Mouse, so moving your phone steers the Mac cursor. Allow it in <strong>Settings → ScreenMark Remote → Motion &amp; Fitness</strong>.</p>
+            </li>
+          </ul>
+        </article>
+
         <!-- System Requirements -->
         <h2 style="font-size:1.6rem;letter-spacing:-0.5px;margin-bottom:18px">System Requirements</h2>
         <table class="req-table">
@@ -125,6 +142,21 @@
             <tr><td><strong>Storage</strong></td><td>Under 10 MB installed</td></tr>
             <tr><td><strong>Distribution</strong></td><td>Mac App Store</td></tr>
             <tr><td><strong>Price</strong></td><td>Free (Pro subscription available)</td></tr>
+          </tbody>
+        </table>
+
+        <h2 style="font-size:1.6rem;letter-spacing:-0.5px;margin:28px 0 18px">ScreenMark Remote (iPhone) Requirements</h2>
+        <table class="req-table">
+          <thead>
+            <tr><th>Requirement</th><th>Details</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Device</strong></td><td>iPhone</td></tr>
+            <tr><td><strong>Operating System</strong></td><td>iOS 17 or later</td></tr>
+            <tr><td><strong>Companion</strong></td><td>ScreenMark running on your computer with Pro active</td></tr>
+            <tr><td><strong>Network</strong></td><td>Same Wi-Fi / local network as your computer</td></tr>
+            <tr><td><strong>Distribution</strong></td><td>App Store</td></tr>
+            <tr><td><strong>Price</strong></td><td>Free</td></tr>
           </tbody>
         </table>
 
@@ -212,6 +244,38 @@
               <span class="faq-arrow">▼</span>
             </div>
             <div class="faq-a">Right-click (or Control-click) the ScreenMark icon in your menu bar and select <strong>Quit</strong>, or use the Quit option inside the toolbar panel.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              How do I connect ScreenMark Remote on my iPhone?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-a">Open ScreenMark on your computer, then launch ScreenMark Remote on your iPhone — keep both on the same Wi-Fi / local network. The first time, the iPhone shows a one-time code; confirm it matches the code shown on your computer and approve the connection there. After that, the Remote reconnects to that computer automatically.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Do I need ScreenMark Pro to use the iPhone remote?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-a">Yes. ScreenMark Remote is a free companion app, but the remote-control features unlock automatically when ScreenMark Pro is active on your computer. There is no separate purchase on the iPhone.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              My iPhone can't find my computer — what should I check?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-a">Make sure both devices are on the same Wi-Fi / local network, that ScreenMark is running on the computer, and that you've allowed <strong>Local Network</strong> access for ScreenMark Remote in <strong>iPhone Settings → ScreenMark Remote</strong>. Staying physically near the computer helps the peer-to-peer link connect. Toggling Wi-Fi off and on, or relaunching either app, usually resolves discovery issues.</div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">
+              Is the connection between my iPhone and computer secure?
+              <span class="faq-arrow">▼</span>
+            </div>
+            <div class="faq-a">Yes. ScreenMark Remote talks only to your own computer over Apple's encrypted Multipeer Connectivity link — there is no server and no internet connection for the remote itself. First-time pairing is confirmed with a one-time code, and trust is then remembered with a token stored securely in the iOS Keychain.</div>
           </div>
 
         </div>
