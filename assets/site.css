@@ -817,6 +817,12 @@ h3 { font-size: 1.2rem; letter-spacing: -0.02em; line-height: 1.2; margin: 0 0 1
 
 /* iPhone mockup */
 .remote-visual { display: flex; justify-content: center; }
+.remote-shot {
+  width: 252px;
+  max-width: 80%;
+  height: auto;
+  filter: drop-shadow(0 30px 60px rgba(0,0,0,0.45));
+}
 .iphone {
   position: relative;
   width: 252px;
