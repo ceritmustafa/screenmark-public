@@ -64,15 +64,10 @@
         </div>
       </div>
 
-      <!-- Hero screenshot with macOS window chrome -->
+      <!-- Hero screenshot — the render already includes its own Mac frame -->
       <div class="hero-screenshot-wrap">
-        <div class="macos-window">
-          <div class="macos-titlebar">
-            <div class="macos-dot red"></div>
-            <div class="macos-dot yellow"></div>
-            <div class="macos-dot green"></div>
-          </div>
-          <img src="assets/screenshots/popover.jpg"
+        <div class="hero-shot">
+          <img src="assets/screenshots/panel.jpg"
                alt="ScreenMark menu bar control panel open over a macOS desktop"
                loading="eager">
         </div>
@@ -169,9 +164,13 @@
       </div>
       <div class="gallery-scroll-wrap">
         <div class="gallery-track">
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/popover.jpg')">
-            <img src="assets/screenshots/popover.jpg" alt="ScreenMark menu bar control panel" loading="lazy">
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/panel.jpg')">
+            <img src="assets/screenshots/panel.jpg" alt="ScreenMark menu bar control panel open over a macOS desktop" loading="lazy">
             <div class="gallery-caption">Menu bar control panel</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/panel-settings.jpg')">
+            <img src="assets/screenshots/panel-settings.jpg" alt="Zoom style and break controls in the ScreenMark panel" loading="lazy">
+            <div class="gallery-caption">Settings &amp; zoom styles</div>
           </div>
           <div class="gallery-item" onclick="openLightbox('assets/screenshots/annotate.jpg')">
             <img src="assets/screenshots/annotate.jpg" alt="Arrows, boxes, and text drawn on screen with the annotation toolbar" loading="lazy">
@@ -181,25 +180,33 @@
             <img src="assets/screenshots/zoom.jpg" alt="ScreenMark live zoom magnifying part of the screen" loading="lazy">
             <div class="gallery-caption">Live Zoom</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/break.jpg')">
-            <img src="assets/screenshots/break.jpg" alt="Full-screen break timer with minutes and seconds rings" loading="lazy">
-            <div class="gallery-caption">Break timer</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/zoom-lens.jpg')">
+            <img src="assets/screenshots/zoom-lens.jpg" alt="Follow-lens zoom magnifying a menu while the cursor moves" loading="lazy">
+            <div class="gallery-caption">Follow-lens zoom</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/blackboard.png')">
-            <img src="assets/screenshots/blackboard.png" alt="Blackboard overlay with annotation toolbar" loading="lazy">
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/cursor-highlight.jpg')">
+            <img src="assets/screenshots/cursor-highlight.jpg" alt="Cursor highlight appearance settings with colour and shape options" loading="lazy">
+            <div class="gallery-caption">Cursor highlight</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/flashlight.jpg')">
+            <img src="assets/screenshots/flashlight.jpg" alt="Cursor flashlight dimming the screen around the pointer" loading="lazy">
+            <div class="gallery-caption">Cursor flashlight</div>
+          </div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/boards.jpg')">
+            <img src="assets/screenshots/boards.jpg" alt="Whiteboard and blackboard overlays side by side" loading="lazy">
             <div class="gallery-caption">Whiteboard &amp; blackboard</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/snip.jpg')">
-            <img src="assets/screenshots/snip.jpg" alt="Dragging a region selection to snip part of the screen" loading="lazy">
-            <div class="gallery-caption">Freeze &amp; snip</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/capture.jpg')">
+            <img src="assets/screenshots/capture.jpg" alt="Snipping a region of the screen to save or share it" loading="lazy">
+            <div class="gallery-caption">Snip, snapshot &amp; record</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/record.png')">
-            <img src="assets/screenshots/record.png" alt="Recording and Live Zoom active with the cursor flashlight" loading="lazy">
-            <div class="gallery-caption">Recording &amp; cursor focus</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/break.jpg')">
+            <img src="assets/screenshots/break.jpg" alt="Full-screen break timer with hours, minutes, and seconds rings" loading="lazy">
+            <div class="gallery-caption">Break timer</div>
           </div>
-          <div class="gallery-item" onclick="openLightbox('assets/screenshots/popover2.jpg')">
-            <img src="assets/screenshots/popover2.jpg" alt="Zoom style and break controls in the ScreenMark panel" loading="lazy">
-            <div class="gallery-caption">Surfaces &amp; zoom styles</div>
+          <div class="gallery-item" onclick="openLightbox('assets/screenshots/shortcuts.jpg')">
+            <img src="assets/screenshots/shortcuts.jpg" alt="Keyboard shortcut settings with every tool individually assignable" loading="lazy">
+            <div class="gallery-caption">Custom shortcuts</div>
           </div>
         </div>
       </div>
@@ -278,7 +285,7 @@
           </div>
         </div>
         <div class="spotlight-visual">
-          <img src="assets/screenshots/record.png" alt="ScreenMark screen recording with Live Zoom active" loading="lazy">
+          <img src="assets/screenshots/capture.jpg" alt="Snipping a region of the screen to save or share it" loading="lazy">
         </div>
       </div>
     </section>
@@ -307,7 +314,7 @@
                   <strong>App Store</strong>
                 </span>
               </a>
-              <span class="remote-soon">Remote Controller — coming soon to your iPhone</span>
+              <span class="remote-note">Free companion app — requires ScreenMark on your Mac</span>
             </div>
           </div>
           <div class="remote-visual">
@@ -340,15 +347,15 @@
           </article>
           <article class="price-card highlight">
             <span class="eyebrow">Best value</span>
-            <h3>Pro Yearly</h3>
-            <p class="price-tag">$39.99 <span>/ year</span></p>
-            <p>Full Pro feature set. Eligible new subscribers can start with a <strong>7-day introductory App Store trial</strong>.</p>
+            <h3>Pro Lifetime</h3>
+            <p class="price-tag">$29.99 <span>one-time</span></p>
+            <p>Every Pro feature, forever. A one-time App Store purchase — <strong>no subscription, no account, no renewals</strong>.</p>
           </article>
           <article class="price-card">
-            <h3>Monthly or Lifetime</h3>
-            <p class="price-tag">$4.99 <span>/ month</span></p>
-            <p class="price-tag" style="font-size:1.4rem">$59.99 <span>lifetime</span></p>
-            <p>Monthly includes the same introductory-trial eligibility. Lifetime is a one-time App Store purchase — no subscription.</p>
+            <h3>Yearly or Monthly</h3>
+            <p class="price-tag">$19.99 <span>/ year</span></p>
+            <p class="price-tag" style="font-size:1.4rem">$4.99 <span>/ month</span></p>
+            <p>Yearly saves 66% versus monthly. Eligible new subscribers can start either plan with a <strong>7-day introductory App Store trial</strong>.</p>
           </article>
         </div>
         <p class="legal-note" style="margin-top:20px; text-align:center">
@@ -396,7 +403,7 @@
       </div>
       <div class="req-item">
         <div class="req-label">Minimum OS</div>
-        <div class="req-value">macOS 13 Ventura</div>
+        <div class="req-value">macOS 15 Sequoia</div>
       </div>
       <div class="req-item">
         <div class="req-label">Chip</div>
